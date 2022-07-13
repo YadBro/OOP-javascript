@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OOP | Error Handling</title>
+</head>
+
+<body>
+  <h1>Hello World</h1>
+
+  <script>
+    class MathUtil {
+
+      static sum(...numbers) {
+        console.log(numbers)
+        if(numbers.length === 0 ){
+          throw new Error('Total parameter harus lebih dari 0');
+        }
+
+        let total = 0;
+        for (const number of numbers) {
+          total += number;
+        }
+        return total;
+      }
+
+    }
+
+    try {
+      const result = MathUtil.sum(1,1,1,1,1,1);
+      console.log(result);
+      
+      console.log(MathUtil.sum()); // error
+    } catch (error) {
+      console.error(`Terjadi Error: ` + error.message);
+    } finally {
+      console.log('finally');
+    }
+
+
+    class Counter {
+      #counter = 0;
+
+      next() {
+        try {
+          return this.#counter;
+        }finally {
+          this.#counter++;
+        }
+      }
+    }
+
+    const counter = new Counter();
+    console.log(counter.next());
+    console.log(counter.next());
+    console.log(counter.next());
+    console.log(counter.next());
+    console.log(counter.next());
+
+  </script>
+</body>
+
+</html>
