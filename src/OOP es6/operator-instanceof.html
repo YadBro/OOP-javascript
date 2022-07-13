@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OOP | Operator Instanceof</title>
+</head>
+
+<body>
+  <h1>Hello World</h1>
+
+  <script>
+    // class Employee {
+
+    // }
+
+    // class Manager {
+
+    // }
+
+    // const yadi = new Employee();
+    // const budi = new Manager();
+
+    // console.log(budi instanceof Employee); // false
+    // console.log(budi instanceof Manager); // true
+
+    // console.log(yadi instanceof Employee); // true
+    // console.log(yadi instanceof Manager); // false
+
+
+    class Employee {
+
+    }
+
+    class Manager extends Employee {
+
+    }
+
+    const yadi = new Employee();
+    const budi = new Manager();
+
+    // apakah sebuah objek instance dari kelas tertentu atau turunan dari kelas tertentu
+    console.log(budi instanceof Employee); // true
+    console.log(budi instanceof Manager); // true
+
+    console.log(yadi instanceof Employee); // true
+    console.log(yadi instanceof Manager); // false
+  </script>
+</body>
+
+</html>
