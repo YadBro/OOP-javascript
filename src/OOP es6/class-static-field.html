@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OOP | Static Field</title>
+</head>
+
+<body>
+  <h1>Hello World</h1>
+
+  <script>
+    // class Configuration {
+    //   name = 'Belajar Javascript OOP';
+    //   version = 1.0;
+    //   author = 'Yadi Apriyadi';
+    // }
+
+    // // kalo fieldnya itu public atau private maka object tersebut akan milik dari object instancenya
+
+    // const config = new Configuration();
+    // console.log(config);
+
+
+    class Configuration {
+      static name = 'Belajar Javascript OOP';
+      static version = 1.0;
+      static author = 'Yadi Apriyadi';
+    }
+
+    // kalo fieldnya itu public atau private maka object tersebut akan milik dari object instancenya
+
+    const config = new Configuration();
+    console.log(config);
+
+    // apabila fieldnya static maka object tersebut akan milik dari class itu sendiri bukan dari object instance nya
+
+    console.log(Configuration.name);
+    console.log(Configuration.version);
+    console.log(Configuration.author);
+    
+    Configuration.author = 'Yadi Tampan'
+    
+    // dan static field ini bisa di ubah beda dengan private
+    
+    console.log(Configuration.author);
+
+  </script>
+</body>
+
+</html>
