@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OOP | Error</title>
+</head>
+
+<body>
+  <h1>Hello World</h1>
+
+  <script>
+    class MathUtil {
+
+      static sum(...numbers) {
+        console.log(numbers)
+        if(numbers.length === 0 ){
+          throw new Error('Total parameter harus lebih dari 0');
+        }
+
+        let total = 0;
+        for (const number of numbers) {
+          total += number;
+        }
+        return total;
+      }
+
+    }
+
+    const result = MathUtil.sum(1,1,1,1,1,1);
+    console.log(result);
+    
+    console.log(MathUtil.sum());
+
+  </script>
+</body>
+
+</html>
