@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OOP | Prototype</title>
+</head>
+
+<body>
+  <h1>Hello World</h1>
+  <script>
+    // CONSTRUCTOR INHERITANCE
+    function Person(firstName, lastName) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.sayHello = function (name) {
+        console.log(`Hello ${name}, my name is ${firstName}`);
+      }
+    }
+
+    Person.prototype.sayBye = function () {
+      return console.log('Good Bye');
+    }
+
+    Person.prototype.run = function () {
+      return console.log(`${this.firstName} is running`);
+    }
+
+    const yadi = new Person('Yadi', 'Apriyadi');
+    const andri = new Person('Andri', 'Sukma');
+
+    yadi.run = function () {
+      return console.log('Sampai jumpa');
+    }
+
+    yadi.run();
+
+    andri.run();
+    console.log(yadi);
+    console.log(andri);
+  </script>
+</body>
+
+</html>

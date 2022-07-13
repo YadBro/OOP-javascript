@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OOP | Prototype-Inheritance</title>
+</head>
+
+<body>
+  <h1>Hello World</h1>
+  <script>
+    // Cara yang salah
+    function Employee(name) {
+      this.name = name;
+    }
+
+    function Manager(name) {
+      this.name = name;
+    }
+
+    // Manager.prototype = Employee.prototype; // salah
+    Manager.prototype = Object.create(Employee.prototype);
+
+    Manager.prototype.sayHello = function (name) {
+      return console.log(`Hello ${name}, my name is Manager ${this.name}`);
+    }
+
+    Employee.prototype.sayHello = function (name) {
+      return console.log(`Hello ${name}, my name is Employee ${this.name}`);
+    }
+
+    const yadi = new Employee('Budi');
+    yadi.sayHello('Yadi');
+
+    const andri = new Manager('Andri');
+    andri.sayHello('Yadi');
+
+    console.info(yadi);
+    console.info(andri);
+  </script>
+</body>
+
+</html>

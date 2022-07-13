@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OOP | Private Field</title>
+</head>
+
+<body>
+  <h1>Hello World</h1>
+
+  <script>
+    class Counter {
+      #counter = 0;
+
+      increment() {
+        return this.#counter++;
+      }
+
+      decrement() {
+        return this.#counter--;
+      }
+
+      get counter() {
+        return this.#counter;
+      }
+
+      set counter(value) {
+        return this.#counter = value;
+      }
+    }
+
+    const count = new Counter();
+    count.increment();
+    count.increment();
+    count.counter = 100;
+    count.increment();
+    count.increment();
+    count.decrement();
+    console.log(count.counter);
+    console.log(count);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OOP | Class Super Method</title>
+</head>
+
+<body>
+  <h1>Hello World</h1>
+  <script>
+    class Person {
+      /**
+       * @param {String} firstName
+       * @param {String} lastName
+       **/
+      constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+      }
+
+      get fullName() {
+        return `${this.firstName} ${this.lastName}`;
+      }
+
+      set fullName(value) {
+        const result = value.split(' ');
+        this.firstName = result[0];
+        this.lastName = result[1];
+      }
+    }
+
+    const yadi = new Person('Yadi', 'Apriyadi');
+    console.log(yadi);
+    console.log(yadi.fullName);
+    yadi.fullName = 'Yadi Tampan'
+    console.log(yadi.fullName);
+    console.log(yadi);
+  </script>
+</body>
+
+</html>

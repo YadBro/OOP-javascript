@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OOP | Object</title>
+</head>
+
+<body>
+  <h1>Hello World</h1>
+  <script>
+    // function CLASS
+
+    function Person(firstName, lastName) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+
+      // CONSTRUCTOR
+      this.sayHello = function (name) {
+        console.log(`Hello ${name}, my name is ${this.firstName}`);
+      }
+    }
+
+    function Manager(firstName, lastName) {
+      Person.call(this, firstName);
+      this.lastName = lastName;
+    }
+
+    const yadi = new Person('Yadi', 'Apriyadi');
+    yadi.firstName = 'Yadi';
+    yadi.lastName = 'Apriyadi';
+    yadi.sayHello('joko');
+
+    const budi = new Person('Budi', ' Nugraha');
+    budi.firstName = 'Budi';
+    budi.lastName = 'Nugraha';
+    budi.sayHello('joko');
+    console.log(yadi);
+    console.log(budi);
+  </script>
+</body>
+
+</html>
